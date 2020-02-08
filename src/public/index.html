@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width" , initial-scale='1'>
+	<title>Коментарии</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="header"></div>
+	<div class="all_content">
+
+		<div class="comm">
+			<h2>Оставь свой коментарий!</h2>
+			<div class="comm_block">
+				<form name="CommForm">
+					<input type="hidden" name="id" value="0" />
+					<textarea name="name" class="textarea_list" placeholder="Ваше имя"></textarea><br>
+					<textarea name="comment" class="textarea_list" placeholder="Ваш комментарий"></textarea>
+				</form>
+			</div>
+
+			<div class="send_block">
+				<button type="submit" class="button_comm" form="CommForm" value="Submit">
+					<svg xmlns="http://www.w3.org/2000/svg" class="svg_one" viewBox="0 0 48 48">
+						<path d="M4.02 42L46 24 4.02 6 4 20l30 4-30 4z" />
+					</svg>
+				</button>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="footer">
+		<div>Created by Artem Prysich</div>
+	</div>
+	<script type="text/javascript" src='js/autosize.js'></script>
+	<script>
+		autosize(document.querySelectorAll('textarea'));
+	</script>
+	<script src="js/requests.js"></script>
+</body>
+
+
+</html>
