@@ -2,12 +2,14 @@ const express = require("express");
 const mongoose = require('mongoose');
 const PORT = process.env.PORT || 8080;
 const path = require('path');
-const router = require("./routers/router")
+const router = require("./routers/router");
+const mongoURI = 'mongodb://heroku_6pvkdxlq:vhd93mmimhnu3td0fa8rm0d1di@ds217799.mlab.com:17799/heroku_6pvkdxlq'
+
 
 
 const app = express();
 
-mongoose.connect('mongodb://heroku_6pvkdxlq:vhd93mmimhnu3td0fa8rm0d1di@ds217799.mlab.com:17799/heroku_6pvkdxlq/test-task-api', {
+mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
