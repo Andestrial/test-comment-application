@@ -4,7 +4,6 @@ const btn = document.querySelector('.button_comm').addEventListener('click', (e)
     const name = document.querySelector('textarea[name=name]').value
     const comment = document.querySelector('textarea[name=comment]').value
     const id = document.querySelector('input[name=id]').value
-    console.log('id: ', id);
     if (id == 0) {
         addComment(name, comment)
     } else {
@@ -67,7 +66,6 @@ function DeleteComment(id) {
         contentType: "application/json",
         method: "DELETE",
         success: function (user) {
-            console.log(user);
             $(`div[data-divid="${user._id}"`).remove();
             location.reload();
         }
@@ -95,7 +93,6 @@ function UpdateComment(userId, userName, userComment) {
 
 $("body").on("click", ".removeLink", function () {
     let id = $(this).data('id');
-    console.log('id: ', id);
     DeleteComment(id);
 })
 
@@ -113,7 +110,6 @@ function CreateElement(user) {
     inp.value = user._id
     div.className = "fin_block";
     div.dataset = `data-divid="${user._id}`;
-    console.log('user._id: ', user._id);
     div.innerHTML =
         `<p class="fin_text" ><span>${user.name}</span><sup>Опубликовано:${formatDate(now)}</sup><p class="content_text" >${user.comment}</p><sub><a data-id="${user._id}" class='editLink fin_text'>Изменить</a> | <a  data-id="${user._id}"class='removeLink fin_text'>Удалить</a></sub>`;
     smth.insertAdjacentElement('afterEnd', div);
