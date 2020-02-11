@@ -13,11 +13,9 @@ router.get('/api/users', async (req, res) => {
 })
 
 router.get('/api/users/:id', (req, res) => {
-    console.log("z pfsadjaklsdnakjndkjaSNs")
     user.findOne({
         _id: req.params.id
     }, function (err, user) {
-        console.log("z pfsadjaklsdnakjndkjaSNs")
         if (err) return console.log(err);
         console.log(user)
         res.send(user)
@@ -27,9 +25,9 @@ router.get('/api/users/:id', (req, res) => {
 
 
 router.post('/api/users', async (req, res) => {
-    console.log(req.body)
-    if (req.body.name == "") req.body.name = "Anonim"
+    if (req.body.name == "") req.body.name = "Anonim";
     const newUser = new user(req.body)
+    console.log('req.body: ', req.body);
     await newUser.save()
         .then(result => {
             console.log(result)
@@ -38,7 +36,6 @@ router.post('/api/users', async (req, res) => {
 })
 
 router.put('/api/users', async (req, res) => {
-    console.log(req.body)
     let id = ObjID(req.body.id);
     const newUser = await user.updateOne({
         _id: id
@@ -49,7 +46,6 @@ router.put('/api/users', async (req, res) => {
             comment: req.body.comment
         }
     });
-    console.log('newUser: ', newUser);
 
     res.send(newUser)
 
