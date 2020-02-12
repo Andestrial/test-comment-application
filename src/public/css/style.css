@@ -51,7 +51,7 @@ body {
 .svg_one {fill: #4a76a8;}
 .svg_one:hover {fill: #5d97d9;}
 
-.fin_block {border-left: 1px solid #d1d1d1; margin-bottom: 50px;}
+.fin_block {border-left: 1px solid #d1d1d1; margin-bottom: 50px; padding-left: 20px;}
 .fin_text {padding-left: 10px; word-break: break-word; }
 .content_text { padding-left: 30px;}
 .fin_text span {padding: 3px 5px;background-color: navajowhite; border-radius: 25px;}

@@ -19,9 +19,6 @@ const btn = document.querySelector('.button_comm').addEventListener('click', (e)
 });
 
 
-
-
-
 function addComment(name, comment, time, parentId) {
     $.ajax({
         url: "/api/users",
@@ -156,7 +153,7 @@ function CreateElement(user, element) {
     div.setAttribute('data-id', user._id)
     div.dataset = `data-divid="${user._id}`;
     div.innerHTML =
-        `<p class="fin_text" ><span>${user.name}</span><sup>Опубликовано:${user.time}</sup><p class="content_text" >${user.comment}</p><sub><a  data-id="${user._id}"class='
+        `<p class="fin_text" ><span>${user.name}</span><p></p><sup>Опубликовано:${user.time}</sup></p><p class="content_text" >${user.comment}</p><sub><a  data-id="${user._id}"class='
     replyLink fin_text'>Ответить</a> | <a data-id="${user._id}" class='editLink fin_text'>Изменить</a> | <a  data-id="${user._id}"class='removeLink fin_text'>Удалить</a></sub>`;
     if (element == undefined) {
 
